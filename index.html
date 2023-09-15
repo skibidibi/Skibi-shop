@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prosty Sklep E-commerce</title>
+    <title>Skibi Shop</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header img {
+            max-width: 300px;
+        }
+
         nav {
-            background-color: #eee;
+            background-color: #333;
             padding: 10px 0;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
+            font-size: 18px;
         }
+
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: black;
+            color: white;
+            transition: color 0.3s;
         }
+
+        nav a:hover {
+            color: #ccc;
+        }
+
         .product {
             border: 1px solid #ddd;
             margin: 10px;
@@ -23,13 +48,46 @@
             display: inline-block;
             width: 200px;
             text-align: center;
+            background-color: white;
+            transition: box-shadow 0.3s;
         }
-        img {
+
+        .product:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        img.product-image {
             max-width: 100%;
+            display: block;
+            margin: auto;
+        }
+
+        button {
+            background-color: #f04d53;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c73c45;
+        }
+
+        .banner {
+            margin: 20px 0;
+            text-align: center;
         }
     </style>
 </head>
+
 <body>
+    <header>
+        <img src="link_do_loga.jpg" alt="Logo Skibi">
+    </header>
+
     <nav>
         <a href="#produkty">PRODUKTY</a>
         <a href="#bestsellery">BESTSELLERY</a>
@@ -38,23 +96,28 @@
         <a href="#onas">O NAS</a>
     </nav>
 
-    <h1>Mój Sklep</h1>
+    <h1>Witaj w Skibi Shop!</h1>
 
     <section id="produkty">
         <h2>Produkty</h2>
-        <div class="product">
-            <img src="link_do_zdjecia_produktu1.jpg" alt="Produkt 1">
-            <h3>Produkt 1</h3>
-            <p>Opis produktu 1</p>
-            <button onclick="dodajDoKoszyka('Produkt 1')">Dodaj do koszyka</button>
+        <nav>
+            <a href="#zabawki">Zabawki</a>
+            <a href="#maskotki">Maskotki</a>
+            <a href="#odziez">Odzież</a>
+            <a href="#dziecko">Dziecko</a>
+            <a href="#nawilżacze">Nawilżacze</a>
+            <a href="#bidony">Bidony</a>
+        </nav>
+        <!-- Dodaj produkty dla każdej podkategorii podobnie jak poniżej -->
+        <div id="zabawki" class="subcategory">
+            <div class="product">
+                <img src="link_do_zdjecia_produktu_zabawka1.jpg" alt="Zabawka 1" class="product-image">
+                <h3>Zabawka 1</h3>
+                <p>Opis zabawki 1</p>
+                <button onclick="dodajDoKoszyka('Zabawka 1')">Dodaj do koszyka</button>
+            </div>
         </div>
-
-        <div class="product">
-            <img src="link_do_zdjecia_produktu2.jpg" alt="Produkt 2">
-            <h3>Produkt 2</h3>
-            <p>Opis produktu 2</p>
-            <button onclick="dodajDoKoszyka('Produkt 2')">Dodaj do koszyka</button>
-        </div>
+        <!-- ... -->
     </section>
 
     <section id="bestsellery">
@@ -77,6 +140,14 @@
         <p>Kilka słów o naszym sklepie...</p>
     </section>
 
+    <section id="reklamy">
+        <h2>Reklamy</h2>
+        <div class="banner">
+            <img src="link_do_banera1.jpg" alt="Reklama 1">
+        </div>
+        <!-- Dodaj więcej banerów jeśli potrzebujesz -->
+    </section>
+
     <script>
         function dodajDoKoszyka(produkt) {
             alert(produkt + ' został dodany do koszyka!');
@@ -84,4 +155,5 @@
         }
     </script>
 </body>
+
 </html>
